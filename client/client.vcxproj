@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{DB5B201C-8697-4D51-9CE8-64F805012ABA}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>client</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.asi</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)</TargetName>
+    <TargetExt>.asi</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GTASA;GAME_10US;WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;CLIENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\plugin-sdk;$(ProjectDir)\plugin-sdk\extensions;$(ProjectDir)\plugin-sdk\extender;$(ProjectDir)\plugin-sdk\comp;$(ProjectDir)\plugin-sdk\game_sa;$(ProjectDir)\plugin-sdk\game;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
+      <PrecompiledHeaderOutputFile />
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)Lib\x86\;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;CLIENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>GTASA;GAME_10US;WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;CLIENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)\plugin-sdk;$(ProjectDir)\plugin-sdk\extensions;$(ProjectDir)\plugin-sdk\extender;$(ProjectDir)\plugin-sdk\comp;$(ProjectDir)\plugin-sdk\game_sa;$(ProjectDir)\plugin-sdk\game;$(DXSDK_DIR)Include</AdditionalIncludeDirectories>
+      <PrecompiledHeaderOutputFile />
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)Lib\x86\;</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;CLIENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="plugin-sdk\Color.cpp" />
+    <ClCompile Include="plugin-sdk\common_sdk.cpp" />
+    <ClCompile Include="plugin-sdk\comp\PluginsCompatibility.cpp" />
+    <ClCompile Include="plugin-sdk\comp\PluginSupport.cpp" />
+    <ClCompile Include="plugin-sdk\comp\plugins\LimitAdjusterSupport.cpp" />
+    <ClCompile Include="plugin-sdk\DynAddress.cpp" />
+    <ClCompile Include="plugin-sdk\Events.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\Config.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\DynamicResource.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\FontPrint.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\KeyCheck.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\Paths.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\Screen.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\ScriptCommands.cpp" />
+    <ClCompile Include="plugin-sdk\extensions\Shader.cpp" />
+    <ClCompile Include="plugin-sdk\GameVersion.cpp" />
+    <ClCompile Include="plugin-sdk\game\CompressedVector.cpp" />
+    <ClCompile Include="plugin-sdk\game\CompressedVector2D.cpp" />
+    <ClCompile Include="plugin-sdk\game\CRGBA.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\C3dMarker.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\C3dMarkers.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAEAudioEntity.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAERadioTrackManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAESound.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAEVehicleAudioEntity.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAEWeaponAudioEntity.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAEWeatherAudioEntity.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimatedBuilding.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendAssocGroup.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendAssociation.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendClumpData.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendHierarchy.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendNode.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendSequence.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimBlendStaticAssociation.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAnimManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAtomicModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CAutomobile.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBaseModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBike.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBirds.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBmx.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBoat.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBouncingPanel.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBoundingBox.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBox.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBrightLights.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBuilding.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBulletInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBulletTrace.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CBulletTraces.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCamera.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCarAI.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCarCtrl.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCarEnterExit.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCarGenerator.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCarPathLink.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCheat.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCheckpoint.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCheckpoints.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCivilianPed.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CClock.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CClothes.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CClothesBuilder.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CClouds.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CClumpModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColBox.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColDisk.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColLine.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCollision.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCollisionData.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColModel.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColourSet.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColPoint.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColSphere.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColTriangle.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CColTrianglePlane.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CControllerConfigManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCopPed.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCoronas.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCover.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCoverPoint.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCredits.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCreepingFire.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCustomCarEnvMapPipeline.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCustomCarPlateMgr.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCutsceneMgr.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CCutsceneObject.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDamageManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDarkel.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDate.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDecision.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDecisionSimple.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDirectory.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDoor.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDraw.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDummy.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDummyObject.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CDummyPed.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CEmergencyPed.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CEntity.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CEntryExit.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CEntryExitManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CExplosion.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CFileLoader.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CFileMgr.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CFire.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CFireManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CFont.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CFormation.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGame.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGamma.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGangInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGangs.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGangWars.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGangWarsSaveStructure.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGarages.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGeneral.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGenericGameStorage.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CGridRef.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\cHandlingDataMgr.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CHandObject.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CHeli.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CHud.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CHudColours.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CIniFile.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CIplStore.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CKeyGen.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CLoadedCarGroup.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CLoadingScreen.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CLocalisation.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMatrix.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMatrixLink.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMenuManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMenuSystem.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMessages.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMirrors.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMissionCleanup.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CModelInfoAccelerator.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMonsterTruck.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CMotionBlurStreaks.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CObject.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\COctTree.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\COctTreeBase.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\common.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\COnscreenCounterEntry.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\COnscreenTimer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\COnscreenTimerEntry.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPad.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPathFind.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPathNode.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPed.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedClothesDesc.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedGroup.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedGroupIntelligence.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedGroupMembership.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedGroupPlacer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedGroups.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedIK.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedIntelligence.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedList.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedPlacement.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPedTaskPair.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPhysical.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPickup.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPickups.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPlaceable.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPlane.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPlaneTrail.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPlaneTrails.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPlayerInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPlayerPed.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPointLights.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPointList.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPolyBunch.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPools.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPopCycle.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPopulation.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CProjectile.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CProjectileInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPtrList.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPtrListDoubleLink.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPtrListSingleLink.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPtrNodeDoubleLink.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CPtrNodeSingleLink.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CQuadBike.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CQuadTreeNode.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CQuaternion.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRadar.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRealTimeShadow.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRect.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CReferences.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRegisteredCorona.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRegisteredMotionBlurStreak.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRenderer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CReplay.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRestart.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRope.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRopes.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CRunningScript.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CScene.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CScriptResourceManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CScriptsForBrains.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSetPiece.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSetPieces.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CShadowCamera.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CShadows.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CShinyTexts.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CShotInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSimpleTransform.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSpecialFX.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSpecialPlateHandler.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSphere.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSprite.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CSprite2d.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CStats.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CStreamedScripts.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CStreaming.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CStreamingInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CStuckCarCheck.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTask.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplex.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexClimb.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexCopInCar.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexDie.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexEnterBoatAsDriver.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexEnterCar.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexEnterCarAsDriver.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexEnterCarAsPassenger.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexFacial.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexJump.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexKillPedFromBoat.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexKillPedOnFoot.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexLeaveCar.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexPlayHandSignalAnim.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexProstituteSolicit.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexSequence.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexStuckInAir.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexSunbathe.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexUseMobilePhone.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexWander.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskComplexWanderStandard.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimple.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleAnim.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleCarSetPedInAsDriver.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleCarSetPedInAsPassenger.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleCarSetPedOut.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleChoking.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleClimb.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleDuck.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleDuckToggle.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleFacial.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleFight.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleGangDriveBy.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleHoldEntity.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleIKChain.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleIKLookAt.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleIKManager.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleInAir.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleJetPack.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleJump.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimplePlayerOnFoot.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleRunAnim.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleRunNamedAnim.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleStandStill.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleStealthKill.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleSwim.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleThrowProjectile.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleTriggerLookAt.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskSimpleUseGun.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskTimer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTaskUtilityLineUpPedWithCar.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CText.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTheCarGenerators.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTheScripts.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTheZones.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTimeCycle.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTimeModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTimer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTrailer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTrain.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTrainNode.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\cTransmission.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CTxdStore.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CUpsideDownCarCheck.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CUserDisplay.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CVector.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CVector2D.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CVehicle.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CVehicleModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CVisibilityPlugins.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWanted.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWeapon.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWeaponEffects.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWeaponInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWeaponModelInfo.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWeather.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CWorld.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\CZone.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\D3DIndexDataBuffer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\D3DResourceSystem.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\D3DTextureBuffer.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxBox_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxFrustumInfo_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxManager_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxMemoryPool_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxPlane_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxPrtMult_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxSphere_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxSystemBP_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\FxSystem_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\Fx_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\JPegCompress.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\ListItem_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\List_c.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\NodeName.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\PipelinePlugin.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\RenderWare.cpp" />
+    <ClCompile Include="plugin-sdk\game_sa\TxdDef.cpp" />
+    <ClCompile Include="plugin-sdk\Other.cpp" />
+    <ClCompile Include="plugin-sdk\Patch.cpp" />
+    <ClCompile Include="plugin-sdk\PluginBase.cpp" />
+    <ClCompile Include="plugin-sdk\StringUtils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="plugin-sdk\ArgPicker.h" />
+    <ClInclude Include="plugin-sdk\Base.h" />
+    <ClInclude Include="plugin-sdk\Color.h" />
+    <ClInclude Include="plugin-sdk\common_sdk.h" />
+    <ClInclude Include="plugin-sdk\comp\PluginsCompatibility.h" />
+    <ClInclude Include="plugin-sdk\comp\PluginSupport.h" />
+    <ClInclude Include="plugin-sdk\comp\plugins\LimitAdjusterSupport.h" />
+    <ClInclude Include="plugin-sdk\DynAddress.h" />
+    <ClInclude Include="plugin-sdk\Error.h" />
+    <ClInclude Include="plugin-sdk\EventList.h" />
+    <ClInclude Include="plugin-sdk\Events.h" />
+    <ClInclude Include="plugin-sdk\Extender.h" />
+    <ClInclude Include="plugin-sdk\extender\ObjectExtender.h" />
+    <ClInclude Include="plugin-sdk\extender\PedExtender.h" />
+    <ClInclude Include="plugin-sdk\extender\VehicleExtender.h" />
+    <ClInclude Include="plugin-sdk\extensions\Config.h" />
+    <ClInclude Include="plugin-sdk\extensions\DynamicResource.h" />
+    <ClInclude Include="plugin-sdk\extensions\FontPrint.h" />
+    <ClInclude Include="plugin-sdk\extensions\KeyCheck.h" />
+    <ClInclude Include="plugin-sdk\extensions\Paths.h" />
+    <ClInclude Include="plugin-sdk\extensions\PoolIterator.h" />
+    <ClInclude Include="plugin-sdk\extensions\Screen.h" />
+    <ClInclude Include="plugin-sdk\extensions\ScriptCommands.h" />
+    <ClInclude Include="plugin-sdk\extensions\scripting\ScriptCommandNames.h" />
+    <ClInclude Include="plugin-sdk\extensions\Shader.h" />
+    <ClInclude Include="plugin-sdk\GameVersion.h" />
+    <ClInclude Include="plugin-sdk\GameVersionMessage.h" />
+    <ClInclude Include="plugin-sdk\game\CompressedVector.h" />
+    <ClInclude Include="plugin-sdk\game\CompressedVector2D.h" />
+    <ClInclude Include="plugin-sdk\game\CRGBA.h" />
+    <ClInclude Include="plugin-sdk\game_sa\AnimAssociationData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\AnimationId.h" />
+    <ClInclude Include="plugin-sdk\game_sa\AnimBlendFrameData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\C2dEffect.h" />
+    <ClInclude Include="plugin-sdk\game_sa\C3dMarker.h" />
+    <ClInclude Include="plugin-sdk\game_sa\C3dMarkers.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEExplosionAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEFireAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEPedAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEPedSpeechAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEPoliceScannerAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAERadioTrackManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAESound.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAETwinLoopSoundEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEVehicleAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEWeaponAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAEWeatherAudioEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimatedBuilding.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimationStyleDescriptor.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendAssocGroup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendAssociation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendClumpData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendHierarchy.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendNode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendSequence.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlendStaticAssociation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimBlock.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAnimManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAtomicModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAttractorScanner.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAutomobile.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CAutoPilot.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBaseModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBike.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBirds.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBmx.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBoat.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBouncingPanel.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBoundingBox.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBox.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBrightLights.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBuilding.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBulletInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBulletTrace.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CBulletTraces.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCam.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCamera.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCamPathSplines.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCarAI.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCarCtrl.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCarEnterExit.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCarGenerator.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCarPathLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCarPathLinkAddress.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCheat.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCheckpoint.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCheckpoints.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCivilianPed.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CClock.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CClothes.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CClothesBuilder.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CClouds.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CClumpModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColBox.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColDisk.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColLine.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCollision.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCollisionData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColModel.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColourSet.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColPoint.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColSphere.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColTriangle.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CColTrianglePlane.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CControllerConfigManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCopPed.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCoronas.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCover.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCoverPoint.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCredits.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCreepingFire.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCrimeBeingQd.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCustomCarEnvMapPipeline.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCustomCarPlateMgr.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCutsceneMgr.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CCutsceneObject.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDamageManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDarkel.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDate.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDecision.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDecisionMaker.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDecisionSimple.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDirectory.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDoor.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDraw.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDummy.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDummyObject.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CDummyPed.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEmergencyPed.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEntityScanner.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEntryExit.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEntryExitManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEventGroup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEventHandler.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CEventScanner.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CExplosion.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFileCarGenerator.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFileLoader.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFileMgr.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFileObjectInstance.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFire.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFireManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFont.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CForbiddenArea.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CFormation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGame.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGamma.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGangInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGangs.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGangWars.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGangWarsSaveStructure.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGarages.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGeneral.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGenericGameStorage.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CGridRef.h" />
+    <ClInclude Include="plugin-sdk\game_sa\cHandlingDataMgr.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CHandObject.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CHeli.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CHud.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CHudColours.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CIniFile.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CIplStore.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CKeyGen.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CLinkList.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CLoadedCarGroup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CLoadingScreen.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CLocalisation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMatrix.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMatrixLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMenuManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMenuSystem.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMessages.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMirrors.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMissionCleanup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CModelInfoAccelerator.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMonsterTruck.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CMotionBlurStreaks.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CNodeAddress.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CObject.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CObjectInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\COctTree.h" />
+    <ClInclude Include="plugin-sdk\game_sa\COctTreeBase.h" />
+    <ClInclude Include="plugin-sdk\game_sa\common.h" />
+    <ClInclude Include="plugin-sdk\game_sa\COnscreenCounterEntry.h" />
+    <ClInclude Include="plugin-sdk\game_sa\COnscreenTimer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\COnscreenTimerEntry.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPad.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPathFind.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPathIntersectionInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPathNode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPed.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedAcquaintance.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedClothesDesc.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedGroup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedGroupIntelligence.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedGroupMembership.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedGroupPlacer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedGroups.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedIK.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedIntelligence.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedList.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedPlacement.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPedTaskPair.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPhysical.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPickup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPickups.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlaceable.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlane.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlaneTrail.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlaneTrails.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlayerData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlayerInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPlayerPed.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPointLights.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPointList.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPolyBunch.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPool.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPools.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPopCycle.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPopulation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CProjectile.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CProjectileInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPtrList.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPtrListDoubleLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPtrListSingleLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPtrNode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPtrNodeDoubleLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CPtrNodeSingleLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CQuadBike.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CQuadTreeNode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CQuaternion.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CQueuedMode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRadar.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRealTimeShadow.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRect.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CReference.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CReferences.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRegisteredCorona.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRegisteredMotionBlurStreak.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRenderer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRepeatSector.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CReplay.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRestart.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRideAnimData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRope.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRopes.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CRunningScript.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CScene.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CScriptResourceManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CScriptsForBrains.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSector.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSetPiece.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSetPieces.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CShadowCamera.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CShadows.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CShinyTexts.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CShotInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSimpleTransform.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSpecialFX.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSpecialPlateHandler.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSphere.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSprite.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CSprite2d.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStats.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStore.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStoredCollPoly.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStreamedScripts.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStreaming.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStreamingInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CStuckCarCheck.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTask.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplex.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexClimb.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexCopInCar.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexDie.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexEnterBoatAsDriver.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexEnterCar.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexEnterCarAsDriver.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexEnterCarAsPassenger.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexFacial.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexJump.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexKillPedFromBoat.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexKillPedOnFoot.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexLeaveCar.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexPlayHandSignalAnim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexProstituteSolicit.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexSequence.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexStuckInAir.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexSunbathe.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexUseMobilePhone.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexWander.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskComplexWanderStandard.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimple.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleAnim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleCarSetPedInAsDriver.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleCarSetPedInAsPassenger.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleCarSetPedOut.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleChoking.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleClimb.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleDuck.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleDuckToggle.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleFacial.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleFight.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleGangDriveBy.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleHoldEntity.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleIKChain.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleIKLookAt.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleIKManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleInAir.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleJetpack.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleJump.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimplePlayerOnFoot.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleRunAnim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleRunNamedAnim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleStandStill.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleStealthKill.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleSwim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleThrowProjectile.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleTriggerLookAt.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskSimpleUseGun.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskTimer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTaskUtilityLineUpPedWithCar.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CText.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTheCarGenerators.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTheScripts.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTheZones.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTimeCycle.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTimeCycleBox.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTimeModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTimer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTrailer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTrain.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTrainNode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\cTransmission.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CTxdStore.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CUpsideDownCarCheck.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CUserDisplay.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CVector.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CVector2D.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CVehicle.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CVehicleModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CVisibilityPlugins.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWanted.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWeapon.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWeaponEffects.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWeaponInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWeaponModelInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWeather.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CWorld.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CZone.h" />
+    <ClInclude Include="plugin-sdk\game_sa\CZoneInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\D3DIndexDataBuffer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\D3DResourceSystem.h" />
+    <ClInclude Include="plugin-sdk\game_sa\D3DTextureBuffer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eAnimations.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eAnimBlendCallbackType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eAudioEvents.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eCamMode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eCarMission.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eClothesModelPart.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eClothesTexturePart.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eCopType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eCrimeType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eDecisionMakerEvents.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eEmergencyPedVoices.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eEntityStatus.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eEntityType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eEventType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eGangID.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eModelID.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePadButtons.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePedAnims.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePedBones.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePedModel.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePedPieceTypes.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePedState.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ePedType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eRadioID.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eScriptCommands.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eSoundID.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eSprintType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eStatModAbilities.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eStats.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eStatsReactions.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eSurfaceType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eTaskType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eVehicleClass.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eVehicleHandlingFlags.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eVehicleHandlingModelFlags.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eWeaponFire.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eWeaponFlags.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eWeaponModel.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eWeaponType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\eWinchType.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxBox_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxEmitterBP_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxFrustumInfo_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxInfoManager_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxManager_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxMemoryPool_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxPlane_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxPrimBP_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxPrtMult_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxSphere_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxSystemBP_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\FxSystem_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\Fx_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\IplDef.h" />
+    <ClInclude Include="plugin-sdk\game_sa\JPegCompress.h" />
+    <ClInclude Include="plugin-sdk\game_sa\ListItem_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\List_c.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CAnimBlendAssociation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CAnimBlendClumpData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CAnimBlendStaticAssociation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCamera.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCarEnterExit.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCarGenerator.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCarPathLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCheat.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CClock.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCover.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CCoverPoint.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CDate.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CEntryExit.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CEntryExitManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CFileLoader.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CFormation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGame.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGangInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGangs.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGangWars.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGangWarsSaveStructure.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGenericGameStorage.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CGridRef.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CMatrixLink.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.COnscreenCounterEntry.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.COnscreenTimer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.COnscreenTimerEntry.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPathNode.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedGroup.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedGroupIntelligence.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedGroupMembership.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedGroupPlacer.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedGroups.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedList.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedPlacement.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPedTaskPair.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CPointList.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CRoadBlocks.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CRunningScript.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CScriptResourceManager.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CScriptsForBrains.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CSpecialPlateHandler.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CStreamedScripts.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CStreaming.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CStreamingInfo.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CStuckCarCheck.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CTheCarGenerators.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CTheScripts.h" />
+    <ClInclude Include="plugin-sdk\game_sa\meta\meta.CUpsideDownCarCheck.h" />
+    <ClInclude Include="plugin-sdk\game_sa\NodeName.h" />
+    <ClInclude Include="plugin-sdk\game_sa\PipelinePlugin.h" />
+    <ClInclude Include="plugin-sdk\game_sa\RenderWare.h" />
+    <ClInclude Include="plugin-sdk\game_sa\RpHAnimBlendInterpFrame.h" />
+    <ClInclude Include="plugin-sdk\game_sa\RwObjectNameIdAssocation.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rpcriter.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rperror.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rphanim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rpmatfx.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rpskin.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rpuvanim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rpworld.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rtanim.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rtdict.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rtquat.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rwcore.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\rwplcore.h" />
+    <ClInclude Include="plugin-sdk\game_sa\rw\skeleton.h" />
+    <ClInclude Include="plugin-sdk\game_sa\SArray.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tBikeHandlingData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tBinaryIplFile.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tBoatHandlingData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tFlyingHandlingData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tHandlingData.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tPickupMessage.h" />
+    <ClInclude Include="plugin-sdk\game_sa\tTransmissionGear.h" />
+    <ClInclude Include="plugin-sdk\game_sa\TxdDef.h" />
+    <ClInclude Include="plugin-sdk\injector\assembly.hpp" />
+    <ClInclude Include="plugin-sdk\injector\calling.hpp" />
+    <ClInclude Include="plugin-sdk\injector\gvm\gvm.hpp" />
+    <ClInclude Include="plugin-sdk\injector\gvm\translator.hpp" />
+    <ClInclude Include="plugin-sdk\injector\hooking.hpp" />
+    <ClInclude Include="plugin-sdk\injector\injector.hpp" />
+    <ClInclude Include="plugin-sdk\injector\utility.hpp" />
+    <ClInclude Include="plugin-sdk\Other.h" />
+    <ClInclude Include="plugin-sdk\Patch.h" />
+    <ClInclude Include="plugin-sdk\plugin.h" />
+    <ClInclude Include="plugin-sdk\PluginBase.h" />
+    <ClInclude Include="plugin-sdk\RefList.h" />
+    <ClInclude Include="plugin-sdk\RefListUtils.h" />
+    <ClInclude Include="plugin-sdk\StringUtils.h" />
+    <ClInclude Include="plugin-sdk\VersionsMacro.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="plugin-sdk\game_sa\rw\errcom.def" />
+    <None Include="plugin-sdk\game_sa\rw\errcore.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
